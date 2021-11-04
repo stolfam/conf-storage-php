@@ -1,9 +1,9 @@
 <?php
     declare(strict_types=1);
 
-    namespace Stolfam\Configurator\Test;
+    namespace Stolfam\ConfStorage\Test;
 
-    use Stolfam\Configurator\IConfigurable;
+    use Stolfam\ConfStorage\IConfigurable;
 
 
     /**

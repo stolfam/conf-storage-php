@@ -5,7 +5,7 @@
     $tempDir = __DIR__ . "/temp";
     $namespace = "test";
 
-    $configurator = new \Stolfam\Configurator\ConfStorage($tempDir, $namespace);
+    $configurator = new \Stolfam\ConfStorage\ConfStorage($tempDir, $namespace);
 
     $prefix = "myPrefix";
     $ids = [
@@ -17,7 +17,7 @@
     $testObjects = [];
 
     foreach ($ids as $objectId) {
-        $testObject = new \Stolfam\Configurator\Test\TestObject(rand(100, 999), "name" . rand(1, 9));
+        $testObject = new \Stolfam\ConfStorage\Test\TestObject(rand(100, 999), "name" . rand(1, 9));
         $configurator->save($objectId, $testObject);
         $testObjects[$objectId] = $testObject;
     }
@@ -26,7 +26,7 @@
 
     foreach ($ids as $objectId) {
         $loadedTestObject = $configurator->load($objectId);
-        if ($loadedTestObject instanceof \Stolfam\Configurator\Test\TestObject) {
+        if ($loadedTestObject instanceof \Stolfam\ConfStorage\Test\TestObject) {
             if ($testObjects[$objectId]->id == $loadedTestObject->id &&
                 $testObjects[$objectId]->name == $loadedTestObject->name) {
                 echo "$objectId: Test passed.\n";

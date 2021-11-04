@@ -7,11 +7,11 @@
     $signature = "mySignature";
     $fakeSignature = "fakeSignature";
 
-    $configurator = new \Stolfam\Configurator\ConfStorage($tempDir, $namespace);
+    $configurator = new \Stolfam\ConfStorage\ConfStorage($tempDir, $namespace);
     $configurator->setSignature($signature);
 
 
-    $testObject = new \Stolfam\Configurator\Test\TestObject(123, "xyz");
+    $testObject = new \Stolfam\ConfStorage\Test\TestObject(123, "xyz");
     $objectId = "abc";
 
     echo "\nTEST #0 - Save/Load an unsigned object\n\n";
@@ -19,7 +19,7 @@
     if ($configurator->save($objectId, $testObject)) {
         $loadedTestObject = $configurator->load($objectId);
 
-        if ($loadedTestObject instanceof Stolfam\Configurator\Test\TestObject) {
+        if ($loadedTestObject instanceof Stolfam\ConfStorage\Test\TestObject) {
             if ($loadedTestObject->id == $testObject->id && $loadedTestObject->name == $testObject->name) {
                 echo "Test passed.\n";
             } else {
@@ -38,7 +38,7 @@
     if ($configurator->save($objectId, $testObject)) {
         $loadedTestObject = $configurator->load($objectId);
 
-        if ($loadedTestObject instanceof Stolfam\Configurator\Test\TestObject) {
+        if ($loadedTestObject instanceof Stolfam\ConfStorage\Test\TestObject) {
             if ($loadedTestObject->id == $testObject->id && $loadedTestObject->name == $testObject->name) {
                 echo "Test passed.\n";
             } else {
@@ -59,7 +59,7 @@
 
     $loadedTestObject = $configurator->load($objectId);
 
-    if ($loadedTestObject instanceof Stolfam\Configurator\Test\TestObject) {
+    if ($loadedTestObject instanceof Stolfam\ConfStorage\Test\TestObject) {
         if ($loadedTestObject->id == $testObject->id && $loadedTestObject->name == $testObject->name) {
             echo "Test passed.\n";
         } else {
@@ -79,7 +79,7 @@
 
     $loadedTestObject = $configurator->load($objectId);
 
-    if ($loadedTestObject instanceof Stolfam\Configurator\Test\TestObject) {
+    if ($loadedTestObject instanceof Stolfam\ConfStorage\Test\TestObject) {
         if ($loadedTestObject->id == $testObject->id && $loadedTestObject->name == $testObject->name) {
             echo "Test passed.\n";
         } else {

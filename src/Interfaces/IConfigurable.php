@@ -1,7 +1,7 @@
 <?php
     declare(strict_types=1);
 
-    namespace Stolfam\Configurator;
+    namespace Stolfam\ConfStorage;
 
     /**
      * Interface IConfigurable
