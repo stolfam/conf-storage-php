@@ -2,6 +2,11 @@
 
 Saves configurations of your PHP objects.
 
+# Install
+```
+composer require stolfam/conf-storage-php
+```
+
 # Using
 
 ```

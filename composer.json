@@ -2,7 +2,7 @@
   "name": "stolfam/conf-storage-php",
   "license": "MIT",
   "description": "Saves configurations of your PHP objects.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "library",
   "require": {
     "php": ">= 7.4"
